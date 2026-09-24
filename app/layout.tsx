@@ -3,7 +3,7 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'ADH Vitaminen & Mineralen | Voedingswijzer',
+  title: 'ADH Vitaminen & Mineralen',
   description:
     'Overzicht van de Aanbevolen Dagelijkse Hoeveelheid (ADH) van alle vitaminen en mineralen, inclusief functie, bronnen en tekortverschijnselen.',
   generator: 'v0.app',
