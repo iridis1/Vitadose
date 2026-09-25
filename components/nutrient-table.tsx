@@ -40,7 +40,7 @@ export function NutrientTable({ nutrients }: NutrientTableProps) {
         <TableHeader>
           <TableRow className="bg-muted/50 hover:bg-muted/50">
             <TableHead className="w-[45%]">Naam</TableHead>
-            <TableHead>ADH (RI)</TableHead>
+            <TableHead>ADH</TableHead>
             <TableHead className="hidden md:table-cell">Oplosbaarheid</TableHead>
             <TableHead className="w-10" aria-hidden="true" />
           </TableRow>
@@ -51,7 +51,7 @@ export function NutrientTable({ nutrients }: NutrientTableProps) {
             return (
               <Fragment key={nutrient.naam}>
                 <TableRow
-                  className="cursor-pointer"
+                  className={`cursor-pointer ${isOpen ? "bg-muted/60 hover:bg-muted/60" : ""}`}
                   onClick={() => setExpanded(isOpen ? null : nutrient.naam)}
                   aria-expanded={isOpen}
                 >
@@ -80,9 +80,9 @@ export function NutrientTable({ nutrients }: NutrientTableProps) {
                   </TableCell>
                 </TableRow>
                 {isOpen && (
-                  <TableRow className="bg-muted/30 hover:bg-muted/30">
+                  <TableRow className="bg-muted/60 hover:bg-muted/60">
                     <TableCell colSpan={4} className="py-4">
-                      <dl className="grid gap-4 sm:grid-cols-3">
+                      <dl className="grid gap-4">
                         <div>
                           <dt className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
                             Functie
