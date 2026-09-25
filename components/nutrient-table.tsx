@@ -82,7 +82,7 @@ export function NutrientTable({ nutrients }: NutrientTableProps) {
                 {isOpen && (
                   <TableRow className="bg-muted/30 hover:bg-muted/30">
                     <TableCell colSpan={4} className="py-4">
-                      <dl className="grid gap-4 sm:grid-cols-3">
+                      <dl className="grid gap-4">
                         <div>
                           <dt className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
                             Functie
