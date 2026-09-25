@@ -51,7 +51,7 @@ export function NutrientTable({ nutrients }: NutrientTableProps) {
             return (
               <Fragment key={nutrient.naam}>
                 <TableRow
-                  className="cursor-pointer"
+                  className={`cursor-pointer ${isOpen ? "bg-muted/60 hover:bg-muted/60" : ""}`}
                   onClick={() => setExpanded(isOpen ? null : nutrient.naam)}
                   aria-expanded={isOpen}
                 >
@@ -80,7 +80,7 @@ export function NutrientTable({ nutrients }: NutrientTableProps) {
                   </TableCell>
                 </TableRow>
                 {isOpen && (
-                  <TableRow className="bg-muted hover:bg-muted">
+                  <TableRow className="bg-muted-foreground/20 hover:bg-muted-foreground/20">
                     <TableCell colSpan={4} className="py-4">
                       <dl className="grid gap-4">
                         <div>
