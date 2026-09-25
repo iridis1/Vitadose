@@ -278,16 +278,7 @@ export const nutrients: Nutrient[] = [
     functie: "Enzymfunctie, afbraak van aminozuren",
     bronnen: "Peulvruchten, volkorenproducten, noten",
     tekortSymptomen: "Zeer zeldzaam",
-  },
-  {
-    naam: "Fluoride",
-    categorie: "mineraal",
-    adh: 3.5,
-    eenheid: "mg",
-    functie: "Sterke tanden, weerstand tegen cariës",
-    bronnen: "Drinkwater, thee, fluoridetandpasta",
-    tekortSymptomen: "Verhoogd risico op tandcariës",
-  },
+  }
 ]
 
 export const categorieLabels: Record<Nutrient["categorie"], string> = {
