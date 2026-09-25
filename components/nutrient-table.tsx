@@ -40,7 +40,7 @@ export function NutrientTable({ nutrients }: NutrientTableProps) {
         <TableHeader>
           <TableRow className="bg-muted/50 hover:bg-muted/50">
             <TableHead className="w-[45%]">Naam</TableHead>
-            <TableHead>ADH (RI)</TableHead>
+            <TableHead>ADH</TableHead>
             <TableHead className="hidden md:table-cell">Oplosbaarheid</TableHead>
             <TableHead className="w-10" aria-hidden="true" />
           </TableRow>

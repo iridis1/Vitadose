@@ -4,15 +4,11 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-background">
       <header className="border-b border-border bg-muted/30">
-        <div className="mx-auto max-w-5xl px-4 py-14 sm:px-6">
-          <h1 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+        <div className="mx-auto max-w-5xl px-4 py-6 sm:px-6">
+          <h1 className="font-semibold text-foreground sm:text-3xl">
             ADH Vitaminen & Mineralen
           </h1>
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground">
-            Een overzicht van de Aanbevolen Dagelijkse Hoeveelheid (ADH), ook wel referentie-inname
-            (RI) genoemd, voor elke vitamine en mineraal. Zoek, vergelijk en ontdek de functie en
-            beste voedingsbronnen per voedingsstof.
-          </p>
+
         </div>
       </header>
 
