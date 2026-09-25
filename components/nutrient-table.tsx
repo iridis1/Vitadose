@@ -80,7 +80,7 @@ export function NutrientTable({ nutrients }: NutrientTableProps) {
                   </TableCell>
                 </TableRow>
                 {isOpen && (
-                  <TableRow className="bg-muted-foreground/20 hover:bg-muted-foreground/20">
+                  <TableRow className="bg-muted/60 hover:bg-muted/60">
                     <TableCell colSpan={4} className="py-4">
                       <dl className="grid gap-4">
                         <div>
