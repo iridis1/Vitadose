@@ -11,7 +11,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 test('Zoekt B12, klapt het resultaat uit en controleert de waarden', async ({ page }) => {
-  await page.getByRole('searchbox', { name: searchLabel }).fill('B12');
+  await page.getByRole('searchbox', { name: searchLabel }).fill('b12');
 
   await expect(page.getByRole('status')).toHaveText('1 van 27 voedingsstoffen');
 
@@ -47,6 +47,16 @@ test('Filtert mineralen en vindt en opent Magnesium', async ({ page }) => {
   await expect(page.getByText('Spier- en zenuwfunctie, energiestofwisseling')).toBeVisible();
   await expect(page.getByText('Noten, volkorenproducten, groene groenten, peulvruchten')).toBeVisible();
   await expect(page.getByText('Spierkrampen, vermoeidheid, ritmestoornissen')).toBeVisible();
+});
+
+test('Zoekt alles wat met calc begint er verwacht twee resultaten', async ({ page }) => {
+  await page.getByRole('searchbox', { name: searchLabel }).fill('calc');
+
+  await expect(page.getByRole('status')).toHaveText('2 van 27 voedingsstoffen');
+
+  const rows = nutrientRows(page);
+  await expect(rows.first()).toContainText('Vitamine D'); // Calciferol
+  await expect(rows.last()).toContainText('Calcium');
 });
 
 test('Filtert vitaminen en herstelt daarna de volledige lijst', async ({ page }) => {
