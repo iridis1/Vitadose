@@ -49,6 +49,16 @@ test('Filtert mineralen en vindt en opent Magnesium', async ({ page }) => {
   await expect(page.getByText('Spierkrampen, vermoeidheid, ritmestoornissen')).toBeVisible();
 });
 
+test('Zoekt alles wat met calc begint er verwacht twee resultaten', async ({ page }) => {
+  await page.getByRole('searchbox', { name: searchLabel }).fill('calc');
+
+  await expect(page.getByRole('status')).toHaveText('2 van 27 voedingsstoffen');
+
+  const rows = nutrientRows(page);
+  await expect(rows.first()).toContainText('Vitamine D'); // Calciferol
+  await expect(rows.last()).toContainText('Calcium');
+});
+
 test('Filtert vitaminen en herstelt daarna de volledige lijst', async ({ page }) => {
   await page.getByRole('tab', { name: 'Vitaminen' }).click();
 
