@@ -4,7 +4,7 @@ import { useMemo, useState } from "react"
 import { nutrients, categorieLabels, type Nutrient } from "@/lib/nutrients-data"
 import { NutrientSearch } from "@/components/nutrient-search"
 import { NutrientTable } from "@/components/nutrient-table"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 type FilterValue = "alles" | Nutrient["categorie"]
 
@@ -29,9 +29,13 @@ export function NutrientExplorer() {
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <Tabs value={filter} onValueChange={(v) => setFilter(v as FilterValue)}>
           <TabsList>
-            <TabsTrigger value="alles">Alles</TabsTrigger>
-            <TabsTrigger value="vitamine">{categorieLabels.vitamine}</TabsTrigger>
-            <TabsTrigger value="mineraal">{categorieLabels.mineraal}</TabsTrigger>
+            <TabsTrigger value="alles" className="cursor-pointer">Alles</TabsTrigger>
+            <TabsTrigger value="vitamine" className="cursor-pointer">
+              {categorieLabels.vitamine}
+            </TabsTrigger>
+            <TabsTrigger value="mineraal" className="cursor-pointer">
+              {categorieLabels.mineraal}
+            </TabsTrigger>
           </TabsList>
         </Tabs>
         <NutrientSearch value={query} onChange={setQuery} />
