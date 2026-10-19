@@ -33,13 +33,3 @@ jobs:
           if-no-files-found: ignore
           retention-days: 7
 
-  deploy:
-    name: Trigger Vercel production deployment
-    needs: test
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
-    steps:
-      - name: Call Vercel Deployment Hook
-        run: curl --fail --silent --show-error --output /dev/null --request POST "$VERCEL_DEPLOY_HOOK_URL"
-        env:
-          VERCEL_DEPLOY_HOOK_URL: ${{ secrets.VERCEL_DEPLOY_HOOK_URL }}
