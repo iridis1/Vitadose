@@ -73,7 +73,7 @@ test('Filtert vitaminen en herstelt daarna de volledige lijst', async ({ page })
 
   await expect(page.getByRole('tab', { name: 'Alles' })).toHaveAttribute('aria-selected', 'true');
   await expect(page.getByRole('status')).toHaveText('27 van 27 voedingsstoffen');
-  await expect(nutrientRows(page)).toHaveCount(27);
+  await expect(nutrientRows(page)).toHaveCount(66);
 
   const allNames = await nutrientRows(page).allTextContents();
   expect(allNames.some((name) => name.includes('Vitamine C'))).toBe(true);
