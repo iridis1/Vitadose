@@ -22,7 +22,7 @@ export default function Home() {
             De vermelde ADH-waarden zijn gebaseerd op de Europese referentie-innames (RI) voor
             volwassenen en dienen als algemene richtlijn. De persoonlijke behoefte kan verschillen
             per leeftijd, geslacht, leefstijl en gezondheidssituatie. Raadpleeg bij twijfel een
-            arts of diëtist.
+            arts of diëtist. -
           </p>
         </div>
       </footer>
